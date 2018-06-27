@@ -17,7 +17,7 @@ class Landing extends Component {
           <div className="container" id="landing-con">
             <div className="row">
               <div className="col-md-12 text-center">
-                <h1 className="display-3 mb-4 main-banner">Camibook2</h1>
+                <h1 className="display-3 mb-4 main-banner">Camibook</h1>
                 <p className="lead">
                   {" "}
                   A social media for book lovers. Share with others your
