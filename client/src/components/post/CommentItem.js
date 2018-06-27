@@ -19,7 +19,7 @@ class CommentItem extends Component {
       >
         <div className="row">
           <div className="col-md-4 border-right border-light">
-            <Link to="/profile">
+            <Link to="/profiles">
               <img
                 className="rounded-circle d-none d-md-block"
                 src={comment.avatar}
