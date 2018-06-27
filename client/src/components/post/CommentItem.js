@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import { deleteComment } from "../../actions/postActions";
 
@@ -18,14 +19,14 @@ class CommentItem extends Component {
       >
         <div className="row">
           <div className="col-md-4 border-right border-light">
-            {/* <a href="/profile"> */}
-            <img
-              className="rounded-circle d-none d-md-block"
-              src={comment.avatar}
-              alt=""
-              style={{ width: "80%", margin: "auto" }}
-            />
-            {/* </a> */}
+            <Link to="/profile">
+              <img
+                className="rounded-circle d-none d-md-block"
+                src={comment.avatar}
+                alt=""
+                style={{ width: "80%", margin: "auto" }}
+              />
+            </Link>
             <br />
             <p className="text-center">{comment.name}</p>
           </div>
@@ -51,7 +52,8 @@ CommentItem.propTypes = {
   deleteComment: PropTypes.func.isRequired,
   comment: PropTypes.object.isRequired,
   postId: PropTypes.string.isRequired,
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
+  profile: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
