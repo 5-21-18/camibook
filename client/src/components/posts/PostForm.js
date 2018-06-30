@@ -66,7 +66,7 @@ class PostForm extends Component {
   }
 
   render() {
-    //const { errors } = this.state;
+    const { errors } = this.state;
 
     return (
       <div className="post-form mb-3 col-md-8">
@@ -82,36 +82,42 @@ class PostForm extends Component {
                   name="category"
                   value={this.state.category}
                   onChange={this.onChange}
+                  error={errors.bname}
                 />
                 <TextFieldGroup
                   placeholder="Book Name"
                   name="bname"
                   value={this.state.bname}
                   onChange={this.onChange}
+                  error={errors.bname}
                 />
                 <TextFieldGroup
                   placeholder="ISBN"
                   name="isbn"
                   value={this.state.isbn}
                   onChange={this.onChange}
+                  error={errors.bname}
                 />
                 <TextFieldGroup
                   placeholder="Year Published"
                   name="year"
                   value={this.state.year}
                   onChange={this.onChange}
+                  error={errors.bname}
                 />
                 <TextAreaFieldGroup
                   placeholder="Description"
                   name="description"
                   value={this.state.description}
                   onChange={this.onChange}
+                  error={errors.bname}
                 />
                 <TextAreaFieldGroup
                   placeholder="Your thoughts about the book"
                   name="thoughts"
                   value={this.state.thoughts}
                   onChange={this.onChange}
+                  error={errors.bname}
                 />
                 {/* <button className="btn btn-secondary btn-sm btn-cover">
                   <label htmlFor="cover">Select a book cover</label>
