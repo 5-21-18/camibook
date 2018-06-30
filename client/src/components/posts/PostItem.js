@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import classnames from "classnames";
 import { Link } from "react-router-dom";
-import { deletePost, addLike, removeLike } from "../../actions/postActions";
+import { deletePost, addLike, thumbsDown } from "../../actions/postActions";
 
 class PostItem extends Component {
   onDeleteClick(id) {
@@ -15,7 +15,7 @@ class PostItem extends Component {
   }
 
   onUnlikeClick(id) {
-    this.props.removeLike(id);
+    this.props.thumbsDown(id);
   }
 
   findUserLike(likes) {
@@ -93,7 +93,14 @@ class PostItem extends Component {
                   type="button"
                   className="btn btn-sm btn-light mr-1"
                 >
-                  <i className="text-secondary fas fa-thumbs-down" />
+                  <i
+                    className={classnames("fas fa-thumbs-down", {
+                      "text-warning": this.findUserLike(post.unlikes)
+                    })}
+                  />
+                  <span className="badge badge-light">
+                    {post.unlikes.length}
+                  </span>
                 </button>
                 <Link
                   to={`/post/${post._id}`}
@@ -126,7 +133,7 @@ PostItem.defaultProps = {
 PostItem.propTypes = {
   deletePost: PropTypes.func.isRequired,
   addLike: PropTypes.func.isRequired,
-  removeLike: PropTypes.func.isRequired,
+  thumbsDown: PropTypes.func.isRequired,
   post: PropTypes.object.isRequired,
   auth: PropTypes.object.isRequired
 };
@@ -137,5 +144,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { deletePost, addLike, removeLike }
+  { deletePost, addLike, thumbsDown }
 )(PostItem);

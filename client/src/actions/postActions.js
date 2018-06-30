@@ -85,7 +85,7 @@ export const deletePost = id => dispatch => {
     );
 };
 
-// Add Like
+// Add thumbs up
 export const addLike = id => dispatch => {
   axios
     .post(`/api/posts/like/${id}`)
@@ -98,8 +98,8 @@ export const addLike = id => dispatch => {
     );
 };
 
-// Remove Like
-export const removeLike = id => dispatch => {
+// add thumbs down
+export const thumbsDown = id => dispatch => {
   axios
     .post(`/api/posts/unlike/${id}`)
     .then(res => dispatch(getPosts()))

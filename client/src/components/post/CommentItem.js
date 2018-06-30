@@ -13,10 +13,7 @@ class CommentItem extends Component {
     const { comment, postId, auth } = this.props;
 
     return (
-      <div
-        className="card card-body mb-3 border-0"
-        style={{ width: "50%", margin: "auto", backgroundColor: "#d7e5ef" }}
-      >
+      <div className="card card-body mb-3 border-0 comment-card">
         <div className="row">
           <div className="col-md-4 border-right border-light">
             <Link to="/profiles">
@@ -53,7 +50,7 @@ CommentItem.propTypes = {
   comment: PropTypes.object.isRequired,
   postId: PropTypes.string.isRequired,
   auth: PropTypes.object.isRequired,
-  profile: PropTypes.object.isRequired
+  profile: PropTypes.object
 };
 
 const mapStateToProps = state => ({
