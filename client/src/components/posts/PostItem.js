@@ -67,6 +67,10 @@ class PostItem extends Component {
               <span className="small">{post.year}</span>
             </p>
             <p className="lead">
+              <span className="lead font-weight-bold">Year Published:</span>{" "}
+              <span className="small">{post.author}</span>
+            </p>
+            <p className="lead">
               <span className="lead font-weight-bold">Description:</span>{" "}
               <span className="small">{post.description}</span>
             </p>

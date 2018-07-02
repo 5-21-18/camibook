@@ -13,6 +13,7 @@ class PostForm extends Component {
       bname: "",
       isbn: "",
       year: "",
+      author: "",
       description: "",
       thoughts: "",
       cover: "",
@@ -40,6 +41,7 @@ class PostForm extends Component {
       bname: this.state.bname,
       isbn: this.state.isbn,
       year: this.state.year,
+      author: this.state.author,
       description: this.state.description,
       thoughts: this.state.thoughts,
       cover: this.state.cover,
@@ -54,6 +56,7 @@ class PostForm extends Component {
       bname: "",
       isbn: "",
       year: "",
+      author: "",
       description: "",
       thoughts: "",
       cover: ""
@@ -102,6 +105,13 @@ class PostForm extends Component {
                   placeholder="Year Published"
                   name="year"
                   value={this.state.year}
+                  onChange={this.onChange}
+                  error={errors.bname}
+                />
+                <TextFieldGroup
+                  placeholder="Author"
+                  name="author"
+                  value={this.state.author}
                   onChange={this.onChange}
                   error={errors.bname}
                 />

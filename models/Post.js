@@ -29,6 +29,10 @@ const PostSchema = new Schema({
     type: Number,
     require: true
   },
+  author: {
+    type: String,
+    require: true
+  },
   description: {
     type: String,
     require: true

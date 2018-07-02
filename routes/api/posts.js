@@ -73,6 +73,7 @@ router.post(
       bname: req.body.bname,
       isbn: req.body.isbn,
       year: req.body.year,
+      author: req.body.author,
       description: req.body.description,
       thoughts: req.body.thoughts,
       cover: req.body.cover,
