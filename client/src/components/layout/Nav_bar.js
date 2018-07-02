@@ -22,11 +22,6 @@ class Navbar extends Component {
             Books Feed
           </Link>
         </li>
-        <li>
-          <Link className="nav-link" to="/search">
-            Search
-          </Link>   
-        </li>
         <li className="nav-item">
           <Link className="nav-link" to="/dashboard">
             Dashboard

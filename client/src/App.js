@@ -18,7 +18,6 @@ import CreateProfile from "./components/create-profile/CreateProfile";
 import EditProfile from "./components/edit-profile/EditProfile";
 import Profiles from "./components/profiles/Profiles";
 import Profile from "./components/profile/Profile";
-import Search from "./components/searchbar.js";
 import Posts from "./components/posts/Posts";
 import Post from "./components/post/Post";
 import NotFound from "./components/not-found/NotFound";
@@ -61,9 +60,6 @@ class App extends Component {
               <Route exact path="/profile/:handle" component={Profile} />
               <Switch>
                 <PrivateRoute exact path="/dashboard" component={Dashboard} />
-              </Switch>
-              <Switch>
-                <PrivateRoute exact path="/search" component={Search} />
               </Switch>
               <Switch>
                 <PrivateRoute
