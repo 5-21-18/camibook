@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import PostItem from './posts/PostItem';
 import { getPosts } from "../actions/postActions";
 
+
 class Search extends React.Component{
     constructor(){
         super();
@@ -12,49 +13,53 @@ class Search extends React.Component{
             input: "",
             book: ""
         }
+
     }
 
     componentDidMount() {
         this.props.getPosts();
     }
+
     
     updateTitles(e){
         this.setState({input: e.target.value});
 
         const { posts } = this.props.post;
+        const { input } = this.state;
 
         const listTitles = posts.map((post) => {
-            console.log(post);
-            if(this.state.input === post.bname){
-                console.log(post._id);
+            if(input.toLowerCase() === post.bname.toLowerCase()){
+            
+                console.log(post.bname, ": Matches input");
                 this.setState({book: <PostItem key={post._id} post={post} />});
-                
-            } // add an else if that displays "A review for this book has not been created yet".
-        });
+            } else {
+                console.log("Does not match");
+            }
+        });     
 
     }
 
-    
 
     render(){
-
-
-        console.log(this.state.book);
+        const { input } = this.state;
 
         return(
             
             <div>
                 <h3>Search for a book!</h3>
                 <Form>
-                <FormGroup controlId="form">
-                    <FormControl type="text" 
+                
+                    <FormGroup controlId="form">
+                        <FormControl type="text" 
                         placeholder="Search by title"  
-                        value={this.state.input}
+                        value={input}
                         onChange={event => this.setState({input: event.target.value})}/> 
-                </FormGroup> 
-                <Button
+                    </FormGroup> 
+
+                    <Button
                     onClick={this.updateTitles.bind(this)}
-                >Search</Button>
+                    >Search</Button>
+                
                 </Form>
                 <hr />
                 <div>
