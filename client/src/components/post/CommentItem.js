@@ -15,19 +15,19 @@ class CommentItem extends Component {
     return (
       <div className="card card-body mb-3 border-0 comment-card">
         <div className="row">
-          <div className="col-md-4 border-right border-light">
+          <div className="col-md-3">
             <Link to="/profiles">
               <img
                 className="rounded-circle d-none d-md-block"
                 src={comment.avatar}
                 alt=""
-                style={{ width: "80%", margin: "auto" }}
+                // style={{ width: "80%", margin: "auto" }}
               />
             </Link>
             <br />
             <p className="text-center">{comment.name}</p>
           </div>
-          <div className="col-md-8">
+          <div className="col-md-9">
             <p className="lead">{comment.bname}</p>
             {comment.user === auth.user.id ? (
               <button
